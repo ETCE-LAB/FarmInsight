@@ -584,7 +584,7 @@ We welcome contributions! Please follow these steps:
 
 ## 👥 Contributors
 
-This project was developed as part of the **Digitalisierungsprojekt** at **Digital Technologies WS24/25**, TU Clausthal.
+This project was developed as part of the **Digitalisierungsprojekt** at **Digital Technologies**, TU Clausthal.
 
 ### Development Team
 
@@ -625,6 +625,6 @@ See the [LICENSE](LICENSE) file for details.
 <p align="center">
   <strong>Made with 💚 at TU Clausthal</strong>
   <br>
-  <a href="https://farminsight.etce.isse.tu-clausthal.de">🌐 Live Demo</a> •
+  <a href="https://farminsight.etce-lab.de">🌐 Live Demo</a> •
   <a href="https://github.com/ETCE-LAB">📦 ETCE-Lab GitHub</a>
 </p>
