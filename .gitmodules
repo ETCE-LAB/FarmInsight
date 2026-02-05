@@ -1,0 +1,16 @@
+[submodule "ai-backend"]
+	path = ai-backend
+	url = https://github.com/ETCE-LAB/FarmInsight-AI-Backend.git
+	branch = dev
+[submodule "dashboard-backend"]
+	path = dashboard-backend
+	url = https://github.com/ETCE-LAB/FarmInsight-Dashboard-Backend.git
+	branch = dev
+[submodule "fpf-backend"]
+	path = fpf-backend
+	url = https://github.com/ETCE-LAB/FarmInsight-FPF-Backend.git
+	branch = dev
+[submodule "dashboard-frontend"]
+	path = dashboard-frontend
+	url = https://github.com/ETCE-LAB/FarmInsight-Dashboard-Frontend.git
+	branch = dev
