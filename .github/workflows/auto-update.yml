@@ -31,6 +31,6 @@ jobs:
         run: |
           if [[ -n $(git status -s) ]]; then
             git add .
-            git commit -m "🤖 Auto-update: Sync modules to latest dev"
+            git commit -m "Auto-update: Sync modules to latest dev"
             git push
           fi
