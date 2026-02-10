@@ -1,46 +1,36 @@
 name: Auto Update Submodules
 
-# Wann soll der Bot laufen?
 on:
-  # 1. Automatisch jeden Tag um 06:00 UTC (ca. 07:00 oder 08:00 Uhr deutscher Zeit)
   schedule:
     - cron: '0 6 * * *'
-  # 2. Manueller Start-Knopf (damit du es testen kannst)
   workflow_dispatch:
 
 jobs:
   update-modules:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Erlaubnis, ins Repo zu schreiben
+      contents: write
 
     steps:
-      # 1. Repo auschecken (inklusive Submodules)
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
 
-      # 2. Git User konfigurieren (damit der Commit einen Namen hat)
       - name: Setup Git User
         run: |
           git config --global user.name 'FarmInsight Bot'
           git config --global user.email 'bot@noreply.github.com'
 
-      # 3. Submodules auf den neusten Stand bringen (folgt der branch = dev Einstellung)
       - name: Update Submodules
         run: |
           git submodule update --remote --recursive
 
-      # 4. Prüfen, ob sich was geändert hat, und wenn ja: Pushen
       - name: Commit and Push if changed
         run: |
           if [[ -n $(git status -s) ]]; then
             git add .
             git commit -m "🤖 Auto-update: Sync modules to latest dev"
             git push
-            echo "Successfully updated modules!"
-          else
-            echo "No changes found. Everything is up to date."
           fi
