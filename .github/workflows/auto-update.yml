@@ -1,4 +1,4 @@
-name: Auto Update Submodules
+4name: Auto Update Submodules
 
 on:
   schedule:
@@ -17,6 +17,7 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+          ref: main
 
       - name: Setup Git User
         run: |
@@ -32,5 +33,5 @@ jobs:
           if [[ -n $(git status -s) ]]; then
             git add .
             git commit -m "Auto-update: Sync modules to latest dev"
-            git push
+            git push origin main
           fi
