@@ -30,8 +30,6 @@ jobs:
 
       - name: Commit and Push if changed
         run: |
-          if [[ -n $(git status -s) ]]; then
-            git add .
-            git commit -m "Auto-update: Sync modules to latest dev"
-            git push origin main
-          fi
+          git add .
+          git commit -m "Auto-update: Sync modules to latest dev" || echo "No changes to commit"
+          git push origin main
